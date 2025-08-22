@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articulate3D Visualization Results</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f7fafc;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a5568;
+        }
+        .stat-label {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        .filter-container {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-box {
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 300px;
+            transition: border-color 0.2s;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .view-mode {
+            display: flex;
+            gap: 10px;
+        }
+        .mode-btn {
+            padding: 8px 16px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mode-btn:hover {
+            border-color: #667eea;
+            background: #f7fafc;
+        }
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .scene-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .scene-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: left 0.3s;
+        }
+        .scene-card:hover::before {
+            left: 0;
+        }
+        .scene-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+        .scene-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .scene-name {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .scene-info {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ Articulate3D Visualization</h1>
+        <div class="subtitle">Complete Results with Articulation Parameters</div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">22</div>
+                <div class="stat-label">Total Scenes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">View Modes</div>
+            </div>
+        </div>
+        
+        <div class="filter-container">
+            <input type="text" class="search-box" id="searchInput" 
+                   placeholder="🔍 Search scenes..." onkeyup="filterScenes()">
+        </div>
+        
+        <div class="grid" id="sceneGrid">
+
+            <a href="07f5b601ee.html" class="scene-card" data-scene="07f5b601ee">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">07f5b601ee</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="08bbbdcc3d.html" class="scene-card" data-scene="08bbbdcc3d">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">08bbbdcc3d</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="09bced689e.html" class="scene-card" data-scene="09bced689e">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">09bced689e</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="0b031f3119.html" class="scene-card" data-scene="0b031f3119">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">0b031f3119</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="210f741378.html" class="scene-card" data-scene="210f741378">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">210f741378</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="39f36da05b.html" class="scene-card" data-scene="39f36da05b">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">39f36da05b</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="4ba22fa7e4.html" class="scene-card" data-scene="4ba22fa7e4">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">4ba22fa7e4</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="56a0ec536c.html" class="scene-card" data-scene="56a0ec536c">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">56a0ec536c</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="5a269ba6fe.html" class="scene-card" data-scene="5a269ba6fe">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">5a269ba6fe</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="6d89a7320d.html" class="scene-card" data-scene="6d89a7320d">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">6d89a7320d</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="712dc47104.html" class="scene-card" data-scene="712dc47104">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">712dc47104</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="87f6d7d564.html" class="scene-card" data-scene="87f6d7d564">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">87f6d7d564</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="88cf747085.html" class="scene-card" data-scene="88cf747085">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">88cf747085</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="a1d9da703c.html" class="scene-card" data-scene="a1d9da703c">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">a1d9da703c</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="aaa11940d3.html" class="scene-card" data-scene="aaa11940d3">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">aaa11940d3</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="d6702c681d.html" class="scene-card" data-scene="d6702c681d">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">d6702c681d</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="daffc70503.html" class="scene-card" data-scene="daffc70503">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">daffc70503</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="dc263dfbf0.html" class="scene-card" data-scene="dc263dfbf0">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">dc263dfbf0</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="e1b1d9de55.html" class="scene-card" data-scene="e1b1d9de55">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">e1b1d9de55</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="ef18cf0708.html" class="scene-card" data-scene="ef18cf0708">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">ef18cf0708</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="f8062cb7ce.html" class="scene-card" data-scene="f8062cb7ce">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">f8062cb7ce</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+            <a href="f8f12e4e6b.html" class="scene-card" data-scene="f8f12e4e6b">
+                <div class="scene-icon">📊</div>
+                <div class="scene-name">f8f12e4e6b</div>
+                <div class="scene-info">Click to view details</div>
+            </a>
+
+        </div>
+    </div>
+    
+    <script>
+        function filterScenes() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const cards = document.querySelectorAll('.scene-card');
+            
+            cards.forEach(card => {
+                const sceneName = card.dataset.scene;
+                if (sceneName.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

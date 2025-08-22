@@ -1,0 +1,37 @@
+{
+  "large_label_to_id": {
+    "door": 1,
+    "window": 2,
+    "drawer": 3,
+    "lid": 4,
+    "cabinet": 5
+  },
+  "large_id_to_label": {
+    "0": "background",
+    "1": "door",
+    "2": "window",
+    "3": "drawer",
+    "4": "lid",
+    "5": "cabinet"
+  },
+  "num_large_classes": 5,
+  "interactive_label_to_id": {
+    "background": 0,
+    "handle": 1,
+    "switch": 2,
+    "control": 3,
+    "knob": 4,
+    "button": 5,
+    "hook": 6
+  },
+  "interactive_id_to_label": {
+    "0": "background",
+    "1": "handle",
+    "2": "switch",
+    "3": "control",
+    "4": "knob",
+    "5": "button",
+    "6": "hook"
+  },
+  "num_interactive_classes": 7
+}

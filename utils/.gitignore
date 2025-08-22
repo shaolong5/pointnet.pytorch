@@ -1,0 +1,23 @@
+data/
+datasets/
+*.zip
+*.pth
+*.pt
+*.ckpt
+*.onnx
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+logs/
+runs/
+outputs/
+# .gitignore 里加
+/vis_html/
+/vis_v2/
+/vis_out/
+/checkpoints/
+/out/
+*.pt
+*.pth
+__pycache__/
+
