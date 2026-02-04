@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs / outputs
+logs/
+output/
+outputs/
+runs/
+wandb/
+
+# Big data / models (按需增删)
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.npz
+*.h5
+*.zarr
+*.ply
+*.obj
+data/
+datasets/
+articulate3d/
+
+ssh -T git@github.com
+ssh -T git@github.com.pub
